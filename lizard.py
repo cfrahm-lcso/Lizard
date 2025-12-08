@@ -5,17 +5,21 @@ import pygame
 root = Tk()
 root.title('Lizard')
 
+#Handler for when stop button is pressed
 def stopButtonEvent():
     root.destroy()
 
 stop_button = Button(root, text= "Stop", command=stopButtonEvent)
 stop_button.pack()
 
+#Start window minimized
 root.iconify()
 
+#Initialize sound mixer
 pygame.mixer.init()
 
 def on_press(key = KeyCode):
+    #Probably can remove try-catch
     try:
         if (type(key) == KeyCode):
             if key == KeyCode.from_char('l') or key == KeyCode.from_char('L'):
